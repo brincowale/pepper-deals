@@ -1,0 +1,8 @@
+{
+  "telegram_api_key": "0123456789:ABCDEFG123456789",
+  "telegram_channel": "@my_channel",
+  "consumer_key": "83561944886fdab16690e78a1f5f5559846dd86d",
+  "consumer_secret": "f0561bf4d666c1cfe942390bc2761a9ce02cedb8",
+  "host": "www.mydealz.de",
+  "pkgname": "com.tippingcanoe.mydealz"
+}
