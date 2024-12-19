@@ -8,12 +8,20 @@ import (
 )
 
 type Config struct {
-	TelegramApiKey  string `json:"telegram_api_key"`
-	TelegramChannel string `json:"telegram_channel"`
-	ConsumerKey     string `json:"consumer_key"`
-	ConsumerSecret  string `json:"consumer_secret"`
-	Host            string `json:"host"`
-	PkgName         string `json:"pkgname"`
+	TelegramApiKey  string   `json:"telegram_api_key"`
+	TelegramChannel string   `json:"telegram_channel"`
+	ConsumerKey     string   `json:"consumer_key"`
+	ConsumerSecret  string   `json:"consumer_secret"`
+	Host            string   `json:"host"`
+	PkgName         string   `json:"pkgname"`
+	Filters         []Filter `json:"filters"`
+}
+
+type Filter struct {
+	Include      string  `json:"include"`
+	Exclude      string  `json:"exclude"`
+	LowestPrice  float64 `json:"lowest_price"`
+	MaximumPrice float64 `json:"maximum_price"`
 }
 
 func ReadConfig() Config {

@@ -29,7 +29,7 @@ type TelegramResponse struct {
 
 func New(token string) Client {
 	httpClient := &http.Client{
-		Timeout: time.Second * 60,
+		Timeout: time.Second * 30,
 	}
 	return Client{
 		Request: httpClient,
@@ -76,8 +76,7 @@ func (c Client) SendMessage(chatId string, message string) error {
 	return errors.New(strError)
 }
 
-// CreateMessage creates a formatted message from a deal
-func (c Client) CreateMessage(deal pepper.Data) string {
+func (c Client) CreateMessage(deal pepper.Deal) string {
 	returnLine := "\n\n"
 	var price string
 	if deal.Price != 0.0 {
@@ -87,7 +86,6 @@ func (c Client) CreateMessage(deal pepper.Data) string {
 	return str
 }
 
-// stripHTMLTags removes HTML tags from the description of the deal
 func stripHTMLTags(input string) string {
 	var output string
 	inTag := false

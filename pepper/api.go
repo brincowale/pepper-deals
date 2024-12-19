@@ -5,11 +5,13 @@ import (
 	"log"
 	"net/http"
 	"pepper-deals/config"
+	"regexp"
+	"strings"
 
 	"github.com/dghubble/oauth1"
 )
 
-type Data struct {
+type Deal struct {
 	Description string  `json:"description"`
 	Title       string  `json:"title"`
 	Price       float64 `json:"price,omitempty"`
@@ -17,7 +19,7 @@ type Data struct {
 }
 
 type Deals struct {
-	Data []Data `json:"data"`
+	Data []Deal `json:"data"`
 }
 
 func GetNewDeals(config config.Config) *Deals {
@@ -62,4 +64,17 @@ func GetNewDeals(config config.Config) *Deals {
 	}
 
 	return &deals
+}
+
+func Matches(deal Deal, filters []config.Filter) bool {
+	for _, filter := range filters {
+		dealText := strings.ToLower(deal.Title + " " + deal.Description)
+		matchedIncludeText, _ := regexp.MatchString(strings.ToLower(filter.Include), dealText)
+		matchedExcludeText, _ := regexp.MatchString(strings.ToLower(filter.Exclude), dealText)
+		priceInRange := deal.Price >= filter.LowestPrice && deal.Price <= filter.MaximumPrice
+		if priceInRange && matchedIncludeText && !matchedExcludeText {
+			return true
+		}
+	}
+	return false
 }
