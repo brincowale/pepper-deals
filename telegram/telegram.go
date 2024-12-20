@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"pepper-deals/pepper"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -82,7 +83,12 @@ func (c Client) CreateMessage(deal pepper.Deal) string {
 	if deal.Price != 0.0 {
 		price = "Price: " + strconv.FormatFloat(deal.Price, 'f', 2, 64) + "€" + returnLine
 	}
-	str := deal.Title + returnLine + stripHTMLTags(deal.Description) + returnLine + price + deal.DealURI
+	var categories string
+	for _, category := range deal.Groups {
+		categories += category.Name + " | "
+	}
+	deal.Merchant.URLName = strings.ReplaceAll(deal.Merchant.URLName, "-", ".")
+	str := deal.Title + returnLine + stripHTMLTags(deal.Description) + returnLine + categories + returnLine + price + deal.DealURI + returnLine + deal.Merchant.URLName
 	return str
 }
 
@@ -94,6 +100,7 @@ func stripHTMLTags(input string) string {
 			inTag = true
 		} else if char == '>' {
 			inTag = false
+			output += " "
 		} else if !inTag {
 			output += string(char)
 		}
