@@ -1,0 +1,50 @@
+project_name: pepper-deals
+
+builds:
+  - id: "linux-amd64"
+    main: ./main.go
+    binary: pepper-deals-linux-amd64
+    goos:
+      - linux
+    goarch:
+      - amd64
+
+  - id: "linux-arm64"
+    main: ./main.go
+    binary: pepper-deals-linux-arm64
+    goos:
+      - linux
+    goarch:
+      - arm64
+
+  - id: "windows-amd64"
+    main: ./main.go
+    binary: pepper-deals-windows-amd64
+    goos:
+      - windows
+    goarch:
+      - amd64
+
+  - id: "windows-arm64"
+    main: ./main.go
+    binary: pepper-deals-windows-arm64
+    goos:
+      - windows
+    goarch:
+      - arm64
+
+  - id: "darwin-amd64"
+    main: ./main.go
+    binary: pepper-deals-darwin-amd64
+    goos:
+      - darwin
+    goarch:
+      - amd64
+
+  - id: "darwin-arm64"
+    main: ./main.go
+    binary: pepper-deals-darwin-arm64
+    goos:
+      - darwin
+    goarch:
+      - arm64
