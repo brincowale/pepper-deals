@@ -18,10 +18,12 @@ type Config struct {
 }
 
 type Filter struct {
-	Include      string  `json:"include"`
-	Exclude      string  `json:"exclude"`
-	LowestPrice  float64 `json:"lowest_price"`
-	MaximumPrice float64 `json:"maximum_price"`
+	Include        string  `json:"include"`
+	Exclude        string  `json:"exclude"`
+	IncludeWebsite string  `json:"include_website"`
+	ExcludeWebsite string  `json:"exclude_website"`
+	LowestPrice    float64 `json:"lowest_price"`
+	MaximumPrice   float64 `json:"maximum_price"`
 }
 
 func ReadConfig() Config {

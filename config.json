@@ -8,13 +8,33 @@
   "filters": [
     {
       "include": "belkin.+nano2?|nano2?.+belkin",
-      "exclude": "aliexpress",
+      "exclude": "",
+      "include_website": "",
+      "exclue_website": "aliexpress.com",
       "lowest_price": 20.00,
       "maximum_price": 40.00
     },
     {
+      "include": ".",
+      "exclude": "",
+      "include_website": "",
+      "exclude_website": "amazon",
+      "lowest_price": 20.00,
+      "maximum_price": 20.00
+    },
+    {
+      "include": "mario.+simba",
+      "exclude": "",
+      "include_website": "",
+      "exclude_website": "mediamarkt",
+      "lowest_price": 20.00,
+      "maximum_price": 35.00
+    },
+    {
       "include": "realme.+5g",
       "exclude": "128gb",
+      "include_website": "",
+      "exclude_website": "",
       "lowest_price": 200.00,
       "maximum_price": 350.00
     }
