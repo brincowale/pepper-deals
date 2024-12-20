@@ -16,7 +16,7 @@ Before you begin, ensure you have met the following requirements:
 
 ## Configuration
 
-The application requires a configuration file named `config.json`, which should be placed in the root directory of the project. You can use the example provided in the repository as a template, which includes the necessary keys and secrets for mydealz.de.
+The application requires a configuration file named `config.json`, which should be placed in the root directory of the project. You can use the example provided in the repository as a template, which includes the necessary keys and secrets for mydealz.de. Build yourself the application or use the [latest release](https://github.com/brincowale/pepper-deals/releases).
 
 ### Filters
 
