@@ -51,4 +51,5 @@ Below is the structure of the `config.json` file:
       "maximum_price": 100.0
     }
   ]
-}```
+}
+```
