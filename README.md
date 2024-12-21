@@ -4,7 +4,7 @@
 
 Pepper Deals is a project designed to fetch and filter deals from the Pepper API, sending notifications directly to a Telegram channel. It utilizes a SQLite database to store deals, and all configurations are managed through a `config.json` file.
 
-Pepper aggregates deals from various websites, including mydealz.de, hotukdeals.co.uk, chollometro, and others, providing users with a comprehensive view of the best offers available.
+Pepper is a network of website who list deals from many sites. Pepper network includes mydealz.de, hotukdeals.co.uk, chollometro, and others, providing users with a comprehensive view of the best offers available in each country.
 
 ## Prerequisites
 
