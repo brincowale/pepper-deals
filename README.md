@@ -22,8 +22,8 @@ The application requires a configuration file named `config.json`, which should 
 
 The filters are defined using regular expressions (regex), allowing for flexible and powerful pattern matching. Each filter object can contain the following fields:
 
-- **include**: A regex pattern to include items that match the criteria.
-- **exclude**: A regex pattern to exclude items that match the criteria.
+- **include**: A regex pattern to include items that match the criteria. (The rule will apply to title+description+categories combined in the same string)
+- **exclude**: A regex pattern to exclude items that match the criteria. (The rule will apply to title+description+categories combined in the same string)
 - **include_website**: A regex pattern to include specific websites.
 - **exclude_website**: A regex pattern to exclude specific websites.
 - **lowest_price**: The minimum price for filtering.
